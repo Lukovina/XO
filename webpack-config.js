@@ -8,7 +8,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Pixi.js Demo'
+      title: 'XO'
     }),
     new CopyPlugin([
       { from: 'src/assets', to: 'assets' },
