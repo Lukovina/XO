@@ -6,9 +6,13 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      from: 'src/css/',
+      to: './'
+  }),
     new HtmlWebpackPlugin({
-      title: 'XO'
+      title: 'XO',
+      template: 'src/index.html'
     }),
     new CopyPlugin([
       { from: 'src/assets', to: 'assets' },
@@ -19,3 +23,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   }
 };
+
+// plugins: [
+//   new HtmlWebpackPlugin({
+//       template: 'src/index.html'
+//   })
+// ],
