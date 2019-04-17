@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
 
+
 export default class Sprite extends PIXI.Sprite {
   constructor(textureName) {
     super();
@@ -12,6 +13,5 @@ export default class Sprite extends PIXI.Sprite {
     
     this.interactive = true;
     this.anchor.set(0.5);
-
   }
 }

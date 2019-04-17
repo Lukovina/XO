@@ -9,11 +9,16 @@ export default class Game extends PIXI.utils.EventEmitter {
     _init(props) {
 
         this.app = new PIXI.Application(props);
+        this.resizer = new Resizer(this);
+
         this.app.size = {
             w: props.width,
             h: props.height
         };
+
+
         document.getElementById("game").appendChild(this.app.view)
+
     }
 
     _showWindow(w) {
@@ -23,10 +28,26 @@ export default class Game extends PIXI.utils.EventEmitter {
                
             this.app.stage.addChild(w);
             this.currentWindow = w;
-            this.resizer = new Resizer(this);
-            this.resizer.resize();
+            this.resizer.resize()
+
             window.addEventListener('resize', this.resizer.resize.bind(this.resizer));
 
         }
+    get currentScene() {
+        return this.app.renderer.stage;
+    }
+
+    get width() {
+        return this.resizer._gameWidth;
+    }
+
+    get height() {
+        return this.resizer._gameHeight;
+    }
+
+    get orientation() {
+        return this.resizer._orientation;
+    }
+
 
 }
