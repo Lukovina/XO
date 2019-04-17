@@ -23,10 +23,9 @@ export default class Game extends PIXI.utils.EventEmitter {
                
             this.app.stage.addChild(w);
             this.currentWindow = w;
-            this.resizer = new Resizer(this.app);
+            this.resizer = new Resizer(this);
+            this.resizer.resize();
             window.addEventListener('resize', this.resizer.resize.bind(this.resizer));
-
-            w.position.set(this.app.renderer.width / 2, this.app.renderer.height / 2);
 
         }
 

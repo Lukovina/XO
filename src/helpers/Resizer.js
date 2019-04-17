@@ -1,6 +1,7 @@
 export default class Resizer {
-    constructor(application) {
-        this._controlledObject = application;
+    constructor(game) {
+        this._game = game;
+        this._controlledObject = game.app;
         this._landscape = 1;
         this._portrait = 2;
         this._width = 0;
@@ -11,8 +12,6 @@ export default class Resizer {
     }
 
     resize() {
-        console.log(this._controlledObject);
-
         let w = window.innerWidth,
             h = window.innerHeight;
 
@@ -37,7 +36,6 @@ export default class Resizer {
             }
         }
         else {
-            console.log(this._controlledObject)
             gh = this._controlledObject.size.h;
             gw = Math.floor(gh * (w / h));
 
@@ -57,8 +55,12 @@ export default class Resizer {
 
         this._scale = Math.min(w / gw, h / gh);
 
-        if (this._controlledObject.stage && this._controlledObject.stage.resize) {
-            this._controlledObject.stage.resize();
+
+        if (this._game.currentWindow && this._game.currentWindow._resize) {
+            this._game.currentWindow._resize(gw, gh);
+            this._game.currentWindow.position.set(this._controlledObject.renderer.width / 2, this._controlledObject.renderer.height / 2);
+
         }
+ 
     }
 }

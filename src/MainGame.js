@@ -1,4 +1,5 @@
 import Sprite from './helpers/Sprite.js';
+import GameField from './ui/GameField.js';
 
 
 export default class MainGame extends Sprite {
@@ -9,9 +10,13 @@ export default class MainGame extends Sprite {
     }
 
     _create() {
-        this.skull = this.addChild(new Sprite('assets/skull.png'));
-        this.skull.width = 200;
-        this.skull.scale.y = this.skull.scale.x;
+
+
+        this.gameField = this.addChild(new GameField());
+    }
+
+    _resize() {
+
     }
 
 }
