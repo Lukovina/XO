@@ -2,8 +2,8 @@ export default class Resizer {
     constructor(game) {
         this._game = game;
         this._controlledObject = game.app;
-        this._landscape = 1;
-        this._portrait = 2;
+        this._landscape = "LANDSCAPE";
+        this._portrait = "PORTRAIT";
         this._width = 0;
         this._height = 0;
         this._gameWidth = 0;
@@ -56,8 +56,8 @@ export default class Resizer {
         this._scale = Math.min(w / gw, h / gh);
 
 
-        if (this._game.currentWindow && this._game.currentWindow._resize) {
-            this._game.currentWindow._resize(gw, gh);
+        if (this._game.currentWindow && this._game.currentWindow.resize) {
+            this._game.currentWindow.resize(gw, gh);
             this._game.currentWindow.position.set(this._controlledObject.renderer.width / 2, this._controlledObject.renderer.height / 2);
 
         }

@@ -3,5 +3,7 @@ export default {
   transparent: true,
   antialias: true,
   width: 960,
-  height: 960
+  height: 960,
+  x: "X",
+  o: "O"
 };
