@@ -16,8 +16,7 @@ export default class Game extends PIXI.utils.EventEmitter {
             h: props.height
         };
 
-
-        document.getElementById("game").appendChild(this.app.view)
+        document.body.appendChild(this.app.view)
 
     }
 

@@ -21,9 +21,8 @@ export default class Cell extends Sprite {
 
     create() {
         let rect = new PIXI.Graphics()
-        .beginFill(0xffffff, 1)
-        .lineStyle(4, 0xFF3300, 1)
-        .drawRect(0, 0, 200, 200)
+        // .beginFill(0x000000, 1)
+        .drawRoundedRect(0, 0, 200, 200, 10)
         .endFill();
 
         this.texture = rect.generateCanvasTexture();
@@ -51,8 +50,8 @@ export default class Cell extends Sprite {
     }
 
     resize() {
-       this.xIcon.scale.set(this.width*0.8 / this.xIcon.texture.width);
-       this.oIcon.scale.set(this.width*0.8 / this.xIcon.texture.width);
+       this.xIcon.scale.set(this.width*0.7 / this.xIcon.texture.width);
+       this.oIcon.scale.set(this.width*0.7 / this.xIcon.texture.width);
     }
     
 

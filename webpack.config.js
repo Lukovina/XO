@@ -13,8 +13,7 @@ module.exports = {
       to: './'
   }),
     new HtmlWebpackPlugin({
-      title: 'XO',
-      template: 'src/index.html'
+      title: 'XO'
     }),
     new CopyPlugin([
       { from: 'src/assets', to: 'assets' },
