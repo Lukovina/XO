@@ -5,7 +5,7 @@ export default {
   antialias: true,
   width: 960,
   height: 960,
-  crossLineHeight: 14,
+  crossLineHeight: 26,
   x: "X",
   o: "O"
 };

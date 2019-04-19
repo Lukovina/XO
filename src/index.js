@@ -7,8 +7,8 @@ let game
 window.addEventListener('load', () => {
     game = new Game(game_config);
     game.app.loader
-    .add('x', 'assets/x.png')
-    .add('o', 'assets/o.png')
+    .add("line", 'assets/line.png')
+    .add(game_config.o, 'assets/o.png')
     .load(() => game._showWindow(new MainGame()));
 
 });
