@@ -32,10 +32,10 @@ export default class GameField extends Sprite {
             }
         }
 
-        let horisontalLine1 = this.addChild(this.addLine(this.cellWidth * this.matrix.length,0, 300)),
-            horisontalLine2 = this.addChild(this.addLine(this.cellWidth * this.matrix.length, 0, 450)),
+        let horisontalLine1 = this.addChild(this.addLine(this.cellWidth * this.matrix.length,0, 400)),
+            horisontalLine2 = this.addChild(this.addLine(this.cellWidth * this.matrix.length, 0, 600)),
             verticalLine1 = this.addChild(this.addLine(this.cellWidth * this.matrix.length, Math.PI/2)),
-            verticalLine2 = this.addChild(this.addLine(this.cellWidth * this.matrix.length,Math.PI/2,150));
+            verticalLine2 = this.addChild(this.addLine(this.cellWidth * this.matrix.length,Math.PI/2,200));
 
             horisontalLine1.position.set(- this.getBounds().width/2, - this.cellWidth/2)
             horisontalLine2.position.set(- this.getBounds().width/2,   this.cellWidth/2)
@@ -137,7 +137,7 @@ export default class GameField extends Sprite {
         let w = Game.width,
             h = Game.height,
             k = w>h ? w/h : h/w;
-            this.scale.set(0.6 * k);
+            this.scale.set(0.65 * k);
 
     }  
 }

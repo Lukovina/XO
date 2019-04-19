@@ -21,7 +21,6 @@ export default class Cell extends Sprite {
 
     create() {
         let rect = new PIXI.Graphics()
-        // .beginFill(0x000000, 1)
         .drawRoundedRect(0, 0, 200, 200, 10)
         .endFill();
 
