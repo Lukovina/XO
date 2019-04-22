@@ -5,7 +5,13 @@ export default {
   antialias: true,
   width: 960,
   height: 960,
-  crossLineHeight: 14,
+  crossLineHeight: 28,
   x: "X",
-  o: "O"
+  o: "O",
+  mainTextStyle: {
+    fontFamily: 'Microgramma',
+    fontSize: 40,
+    fill: 0x00ff00,
+    align: 'center'
+  }
 };

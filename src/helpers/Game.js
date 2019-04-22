@@ -1,5 +1,7 @@
 import * as PIXI from 'pixi.js';
 import Resizer from "./Resizer";
+import * as TWEEN from 'es6-tween'
+TWEEN.autoPlay(true); 
 
 export default class Game extends PIXI.utils.EventEmitter {
     constructor(props) {
